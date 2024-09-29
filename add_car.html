@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Include jQuery (required for intl-tel-input) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Add these links to include Swiper CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link href="craft.css" rel="stylesheet">
+
+    <style>
+
+    </style>
+    <script>
+        $(document).ready(function () {
+            $("#head").load("navbar2.html");
+        });
+        $(document).ready(function () {
+            $("#footer").load("footer.html");
+        });
+    </script>
+</head>
+
+<body>
+    <div class="head" id="head">
+        <!-- Your header content here -->
+    </div>
+
+     
+
+   <!-- Add productForm -->
+<div class="container mt-5 my-3 py-2" style="background-color: #f5f5f5;" id="add_car">
+    <h2>Add Product</h2>
+    <form action="add_car.php" method="post" enctype="multipart/form-data">
+        <!-- New Fields for Name, Phone, and Email -->
+        <div class="row mb-3">
+            <div class="col">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="col">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+        </div>
+    
+        <div class="mb-3">
+            <label for="carName" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="carName" name="carName" required>
+        </div>
+        <div class="mb-3">
+            <label for="carModel" class="form-label">Product Cost</label>
+            <input type="text" class="form-control" id="carModel" name="carModel" required>
+        </div>
+        <div id="featuresContainer">
+            <label for="features">Features</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="featureNames[]" placeholder="Feature Name" required>
+                <input type="text" class="form-control" name="featureDescriptions[]" placeholder="Feature Description" required>
+                <button class="btn btn-outline-secondary" type="button" onclick="addFeatureField()">Add Feature</button>
+            </div>
+        </div>
+    
+        <div class="mb-3">
+            <label for="carImages" class="form-label">Product Images</label>
+            <input type="file" class="form-control" id="carImages" name="carImages[]" accept="image/*" multiple>
+        </div>
+    
+        <!-- New Fields for Service Period -->
+        <div class="mb-3">
+            <label for="serviceStartDate" class="form-label">Service Start Date</label>
+            <input type="date" class="form-control" id="serviceStartDate" name="serviceStartDate" required>
+        </div>
+    
+        <div class="mb-3">
+            <label for="serviceEndDate" class="form-label">Service End Date</label>
+            <input type="date" class="form-control" id="serviceEndDate" name="serviceEndDate" required>
+        </div>
+     <!-- New Field for Discount Coupon Code -->
+    <!-- New Field for Coupon Code -->
+<div class="mb-3">
+    <label for="couponCode" class="form-label">Coupon Code</label>
+    <input type="text" class="form-control" id="couponCode" name="couponCode">
+</div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    
+</div>
+
+<script>
+    function addFeatureField() {
+        var container = document.getElementById('featuresContainer');
+        var inputGroup = document.createElement('div');
+        inputGroup.classList.add('input-group', 'mb-3');
+        inputGroup.innerHTML = `
+            <input type="text" class="form-control" name="featureNames[]" placeholder="Feature Name">
+            <input type="text" class="form-control" name="featureDescriptions[]" placeholder="Feature Description">
+            <button class="btn btn-outline-secondary" type="button" onclick="removeFeatureField(this)">Remove</button>
+        `;
+        container.appendChild(inputGroup);
+    }
+
+    function removeFeatureField(button) {
+        button.parentElement.remove();
+    }
+</script>
+
+
+
+
+   <!-- Customer Reviews Section -->
+<section class="mt-5 py-2">
+    <div class="container">
+        <h2 class="text-center">Customer Reviews</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/testimonials/testimonials-1.jpg" alt="Customer Image 1" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Happy Customer 1</h5>
+                        <p class="card-text">"Absolutely delighted with my handmade purchase! The craftsmanship is outstanding."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/testimonials/testimonials-2.jpg" alt="Customer Image 2" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Satisfied Art Lover</h5>
+                        <p class="card-text">"Extensive collection of unique handmade products. The ordering process was smooth."</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more customer reviews here -->
+        </div>
+    </div>
+</section>
+
+
+    </section>
+    <div id="footer"></div>
+
+    <!-- Your scripts and closing body/html tags here -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            loop: true,
+            autoplay: {
+                delay: 5000, // 5 seconds delay between slides
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

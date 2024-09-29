@@ -1,0 +1,80 @@
+
+/* Custom CSS for mobile navigation */
+@media (max-width: 767.98px) {
+    .navbar-brand-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-brand-profile img {
+        margin-right: 8px;
+    }
+
+    .navbar-brand-profile span {
+        display: none;
+    }
+
+    .navbar-nav-center {
+        display: none;
+    }
+
+    /* Custom CSS to show sidebar in mobile view when toggle button is clicked */
+    .sidebar.show {
+        display: block;
+    }
+    .custom-navbar-toggler{
+        background-color: black;
+        color: #fff;
+    }
+}
+
+/* Custom CSS for desktop navigation 
+@media (min-width: 768px) {
+    .navbar-brand-profile {
+        display: block;
+        color: #fff;
+    }
+
+    .navbar-nav-center {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        display: block;
+        color: #fff;
+    }
+
+    .navbar-nav-center .nav-item {
+        margin-right: 15px;
+        display: block;
+        color: #fff;
+    }
+
+    .navbar-nav-center .nav-item:last-child {
+        margin-right: 0;
+    }
+    #sidebar {
+       
+        height: 100vh;
+    }
+}
+*/
+#sidebar {
+       
+    height: 100vh;
+}
+#sidebar .nav-item a ,#sidebar ul li button{
+    text-decoration: none;
+    color: black;
+    margin: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#sidebar .nav-item a:hover{
+    background-color: #209dd8;;
+    border-radius: 15px;
+}
+
+.row .card {
+    cursor: pointer; /* Add this line to show the pointer cursor */
+}

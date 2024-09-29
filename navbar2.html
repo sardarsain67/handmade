@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Bootstrap</title>
+    <style>
+        .navbar {
+            background-color: #4a90e2; /* Updated theme color */
+            text-align: center;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff !important; /* Ensure nav links are white */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #e0e0e0 !important; /* Hover color for nav links */
+        }
+
+        .form-inline .form-control {
+            border-radius: 0;
+        }
+
+        @media (max-width: 767px) {
+            .navbar-brand {
+                margin-right: 0;
+            }
+
+            .navbar-toggler {
+                margin-left: auto;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <!-- Logo on the left -->
+            <div class="col-md-4 align-items-start" >
+            <a class="navbar-brand me-auto" href="#"><img src="./img/logo.jpeg" alt="Logo"></a>
+        </div>
+<div class="col-md-8 justify-content-center">
+            <!-- Toggle button for mobile view -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navigation links and search icon on the right -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav"> <!-- Remove justify-content-end class -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="car_home.php">Craft</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="add_car.html">Add Your Product</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="books.php">Trackings</a>
+                      </li>
+                   
+                      <li class="nav-item">
+                        <a class="nav-link" href="card.php">Card</a>
+                      </li>
+                      <li class="nav-item">
+                        <!--<a class="nav-link" href="index.html">Logout</a>-->
+                        <a class="nav-link"href="logout.php">Logout</a>
+                      </li>
+                </ul>
+
+                
+            </div>
+        </div>
+    </nav>
+</div>
+    <!-- Your page content goes here -->
+</body>
+</html>

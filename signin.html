@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In |  handmade haven Company</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <style>
+     body {
+      background: url('img/products/top-view-essentials-bead-working-with-scissors.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    .input-group {
+      position: relative;
+    }
+  
+    #togglePassword {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      padding: 6px;
+    }
+  </style>
+  <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Add event listener to the "Toggle Password" button
+      document.getElementById('togglePassword').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default click behavior
+  
+        const passwordInput = document.getElementById('password');
+        const icon = this.querySelector('i');
+  
+        // Toggle the type attribute of the password input between 'password' and 'text'
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          icon.classList.remove('fa-eye');
+          icon.classList.add('fa-eye-slash');
+        } else {
+          passwordInput.type = 'password';
+          icon.classList.remove('fa-eye-slash');
+          icon.classList.add('fa-eye');
+        }
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-primary text-white text-center">
+            <h4>Sign In | HandMade-Haven Company</h4>
+          </div>
+          <div class="card-body">
+            <form method="post" action="signin.php">
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="password" name="password" required>
+                  <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary">Sign In</button>
+              </div>
+            </form>
+            <div class="text-center mt-3">
+              <a href="forgot.html" class="text-decoration-none">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <p class="mb-0">Don't have an account? <a href="signup.html" class="text-decoration-none">Sign Up</a></p>
+          </div>
+          <div class="text-center mt-3 my-1">
+            <a href="index.html" class="btn btn-primary">Home Page</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Check if the success query parameter is present in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get('success');
+  
+    // Display the alert if the success parameter is present
+    if (success === '1') {
+        alert('Password reset successful! Please login with your new password.');
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+
+</html>

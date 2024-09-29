@@ -1,0 +1,291 @@
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 80vh;
+  background-color: rgba(74, 144, 226, 0.8); /* Updated hero section background color */
+  overflow: hidden;
+  position: relative;
+  padding-top: 1rem;
+  object-fit: cover;
+  background-size: cover;
+  background-image: url('img/products/top-view-essentials-bead-working-with-scissors.jpg');
+}
+
+#hero .carousel,
+#hero .carousel-inner,
+#hero .carousel-item,
+#hero .carousel-item::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#hero .carousel-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#hero .carousel-item::before {
+  content: "";
+  background-color: rgba(74, 144, 226, 0.6); /* Updated overlay background color for carousel items */
+}
+
+#hero .carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  top: 70px;
+  left: 50px;
+  right: 50px;
+}
+
+#hero .container {
+  text-align: center;
+  align-items: center;
+  margin-top: 20%;
+}
+
+#hero h2 {
+  color: #000000;
+  margin-bottom: 20px;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+#hero p {
+  animation-delay: 0.4s;
+  margin: 0 auto 30px auto;
+  color: #000;
+}
+
+#hero .carousel-inner .carousel-item {
+  transition-property: opacity;
+  background-position: center top;
+}
+
+#hero .carousel-inner .carousel-item,
+#hero .carousel-inner .active.carousel-item-start,
+#hero .carousel-inner .active.carousel-item-end {
+  opacity: 0;
+}
+
+#hero .carousel-inner .active,
+#hero .carousel-inner .carousel-item-next.carousel-item-start,
+#hero .carousel-inner .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+  transition: 0.5s;
+}
+
+#hero .carousel-inner .carousel-item-next,
+#hero .carousel-inner .carousel-item-prev,
+#hero .carousel-inner .active.carousel-item-start,
+#hero .carousel-inner .active.carousel-item-end {
+  left: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+#hero .carousel-control-next-icon,
+#hero .carousel-control-prev-icon {
+  background: none;
+  font-size: 30px;
+  line-height: 0;
+  width: auto;
+  height: auto;
+  background: rgba(255, 255, 255, 0.2); /* Keep the same for carousel controls */
+  border-radius: 50px;
+  transition: 0.3s;
+  color: rgba(255, 255, 255, 0.5);
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero .carousel-control-next-icon:hover,
+#hero .carousel-control-prev-icon:hover {
+  background: rgba(255, 255, 255, 0.3); /* Hover background color for carousel controls */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#hero .carousel-indicators li {
+  list-style-type: none;
+  cursor: pointer;
+  background: #fff; /* Background color for carousel indicators */
+  overflow: hidden;
+  border: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+#hero .carousel-indicators li.active {
+  opacity: 1;
+  background: #4a90e2; /* Updated color for active carousel indicator */
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  line-height: 1;
+  color: #fff;
+  animation-delay: 0.8s;
+  background: #4a90e2; /* Updated color for get started button */
+}
+
+#hero .btn-get-started:hover {
+  background: #357abd; /* Updated hover background color for get started button */
+}
+
+@media (max-width: 992px) {
+  #hero {
+    height: 100vh;
+  }
+
+  #hero .carousel-container {
+    top: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 28px;
+    margin-top: 25rem;
+    color: yellow;
+  }
+  #hero p {
+    color: red;
+  }
+}
+
+@media (min-width: 1024px) {
+  #hero .carousel-control-prev,
+  #hero .carousel-control-next {
+    width: 5%;
+  }
+}
+
+@media (max-height: 500px) {
+  #hero {
+    height: 120vh;
+  }
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.swiper-slide.slide-1 {
+  background-image: url('img/slide/slide-1.jpg');
+}
+
+.swiper-slide.slide-2 {
+  background-image: url('img/slide/slide-2.jpg');
+}
+
+.swiper-slide.slide-3 {
+  background-image: url('img/slide/slide-3.jpg');
+}
+
+body {
+  background: #d2d1d1;
+}
+
+.craft {
+  background: #e5e4e4;
+}
+
+/* Add your custom CSS here */
+#products-frame {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.product {
+  padding: 10px;
+  border: #4a90e2 solid 1px; /* Updated border color for products */
+  margin: 1rem;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+.product:hover img {
+  transform: scale(1.05);
+}
+
+/* Update "See Features" button styles */
+.product button {
+  background-color: #4a90e2; /* Updated background color for product buttons */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product button:hover {
+  background-color: #357abd; /* Updated hover background color for product buttons */
+}
+
+/* Update list styles for product features */
+.features {
+  list-style-type: none; /* Remove default bullets */
+  padding-left: 0; /* Remove default left padding */
+}
+
+/* Add custom list marker and text decoration */
+.features li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 30px; /* Adjust the left padding to make space for the custom bullet */
+}
+
+.features li::before {
+  content: "\2022"; /* Use a custom bullet character (e.g., a solid circle) */
+  color: #4a90e2; /* Updated bullet color */
+  font-size: 12px; /* Adjust bullet size */
+  position: absolute;
+  left: 0; /* Adjust bullet position */
+}
+
+.features li::after {
+  content: ""; /* Add a separator line after each list item */
+  display: block;
+  width: 80%;
+  height: 1px;
+  background-color: #4a90e2; /* Updated line color */
+  position: absolute;
+  top: 100%; /* Position the line in the middle of the list item */
+  transform: translateY(-50%);
+}
+
+.features {
+  display: none;
+  /*list-style-type: circle; /* Improved list style */
+}
+
+.features li {
+  margin: 5px 0; /* Improved spacing for list items */
+}

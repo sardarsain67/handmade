@@ -1,0 +1,39 @@
+/* CSS for the Order Tracking Progress */
+.order-progress {
+    margin-bottom: 20px; /* Add margin at the bottom */
+    border-radius: 5px; /* Add rounded corners to the progress bar */
+    height: 80px; /* Increased height for better visibility of text */
+}
+
+.progress-bar {
+    color: white; /* Text color inside progress bars */
+    font-size: 18px; /* Increased font size for better readability */
+    line-height: 80px; /* Center text vertically */
+    text-align: center;
+    white-space: nowrap; /* Prevent text from wrapping */
+    display: flex; /* Flexbox for better alignment */
+    align-items: center; /* Center text vertically */
+    padding: 0 10px; /* Padding to ensure text is not too close to the edges */
+}
+
+.bg-info {
+    background-color: #17a2b8; /* Light Blue */
+}
+
+.bg-warning {
+    background-color: #ffc107; /* Yellow */
+}
+
+.bg-primary {
+    background-color: #007bff; /* Blue */
+}
+
+.bg-success {
+    background-color: #28a745; /* Green */
+}
+
+/* Icon styling */
+i {
+    margin-right: 10px; /* Increased space between icon and text */
+    font-size: 24px; /* Adjusted icon size for better visibility */
+}
